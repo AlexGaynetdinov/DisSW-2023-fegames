@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { PaymentsComponent } from './payments/payments.component';
+import { Router, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,10 @@ import { PaymentsComponent } from './payments/payments.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {path: 'app-login', component: LoginComponent},
+      {path: 'app-register', component: RegisterComponent},
+    ]),
     AppRoutingModule,
     FormsModule,
     HttpClientModule

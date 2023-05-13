@@ -8,14 +8,12 @@ import { AccountService } from '../account.service';
 })
 export class RegisterComponent implements OnInit{
   // para indicar que pueden no tener valor definido se usa ?
-  name : string = "pepe"
-	email : string 
+  name? : string
+	email? : string 
 	pwd1? : string
   pwd2? : string
 
-  constructor(private accountService : AccountService){
-    this.email = "pepe@pepe.com"
-  }
+  constructor(private accountService : AccountService){ }
 
   ngOnInit() : void {
   }

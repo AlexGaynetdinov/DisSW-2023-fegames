@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account.service';
 import { GamesService } from '../games.service';
+import { FormsModule } from '@angular/forms';
 
 declare let Stripe: any
 
@@ -10,8 +11,8 @@ declare let Stripe: any
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  name? : string = "Pepe"
-  pwd? : string = "Pepe1234"
+  name? : string
+  pwd? : string
   message? : string
   loginCorrecto : boolean = false
   stripe = Stripe("pk_test_51Mo0YCL0kXbyHZbW3VGY8Kw4b2HFr51TCc5cxH35Xvb24UiMQ6TG1G5hRTqPQWa93LWfGcJi9wKZfTdVXoG3jh4i00y95L5Za7");
