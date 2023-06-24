@@ -12,21 +12,22 @@ export class GamesService {
 
   requestGame() {
     this.httpClient.get<any>("http://localhost/users/register" + sessionStorage.getItem("player"))
-        .subscribe(
-          respuesta => {
+        .subscribe({
+          next : (respuesta : any) => {
             sessionStorage.setItem("idMatch", respuesta.id)
             console.log(respuesta)
             this.prepareWebSocket()
           },
-            error => {
-            console.log(error)
-          })
+          error : (respuesta : any) => {
+            console.log(respuesta)
+          }})
   }
 
   prepareWebSocket() {
     this.ws = new WebSocket("ws://localhost/wsGames")
     this.ws.onopen = function() {
       console.log("ws abierto")
+      alert("ws abierto")
     }
 
     this.ws.onmessage = function(event) {
