@@ -1,0 +1,19 @@
+<div class="card">
+    <h1 class="card-header">Iniciar sesión</h1>
+    <div class="card-body">
+        <b></b>
+        <input type="text" [(ngModel)]="name" placeholder="Usuario" class="formulario">
+        <br><br>
+        <input type="password" [(ngModel)]="pwd" placeholder="Contraseña" class="formulario">
+        <br><br>
+        <button (click)="login()">Iniciar sesión</button>
+        <a (click)="router.navigate(['register'])" class="alongisdeRef">Registrarse</a>
+    </div>
+</div>
+<br>
+<div *ngIf="loginCorrecto">
+    <a href="/game">
+        <img src="assets/boton_jugar.png">
+    </a>
+    <a (click)="router.navigate(['payments'])" class="alongisdeRef">Comprar partidas</a>
+</div>
