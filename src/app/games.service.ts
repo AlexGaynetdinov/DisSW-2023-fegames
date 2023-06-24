@@ -11,7 +11,7 @@ export class GamesService {
   constructor(private httpClient : HttpClient) { }
 
   requestGame() {
-    this.httpClient.get<any>("http://localhost/users/register" + sessionStorage.getItem("player"))
+    this.httpClient.get<any>("http://localhost/games/requestGame?juego=nm&player=" + sessionStorage.getItem("player"))
         .subscribe({
           next : (respuesta : any) => {
             sessionStorage.setItem("idMatch", respuesta.id)
@@ -27,7 +27,6 @@ export class GamesService {
     this.ws = new WebSocket("ws://localhost/wsGames")
     this.ws.onopen = function() {
       console.log("ws abierto")
-      alert("ws abierto")
     }
 
     this.ws.onmessage = function(event) {
